@@ -51,6 +51,7 @@ class LoginActivity : AppCompatActivity() {
 
         binding.tvGoToRegister.setOnClickListener {
             startActivity(Intent(this, RegistrationActivity::class.java))
+            finish()
         }
     }
 
