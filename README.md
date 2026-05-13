@@ -14,4 +14,14 @@ An offline Android dictionary app that helps Kannada-medium students learn techn
 ## Tech Stack
 Kotlin, Room Database, ViewModel, LiveData, RecyclerView, Android TTS, ViewBinding
 
+## Firebase Authentication Setup (Email/Password)
+1. Create a Firebase project and register this Android app package: `com.nudi.nallanudi`.
+2. Enable **Authentication > Sign-in method > Email/Password** in Firebase Console.
+3. Download `google-services.json` from Firebase Console.
+4. Place the file at:
+   - `/home/runner/work/Nalla-Nudi/Nalla-Nudi/app/google-services.json`
+5. Build and run the app. Login and Registration screens will use Firebase Authentication.
+
+> `google-services.json` is intentionally not included in this repository.
+
 ## MindMatrix VTU Internship Program - Project 40

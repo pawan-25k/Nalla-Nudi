@@ -107,5 +107,15 @@
             android:backgroundTint="#7c3aed"
             android:textColor="#ffffff"/>
 
+        <Button
+            android:id="@+id/btnSignOut"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginTop="12dp"
+            android:backgroundTint="#b91c1c"
+            android:text="@string/sign_out"
+            android:textColor="#ffffff"
+            android:textSize="16sp" />
+
     </LinearLayout>
 </ScrollView>

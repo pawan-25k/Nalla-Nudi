@@ -1,3 +1,18 @@
 <resources>
     <string name="app_name">NallaNudi</string>
+    <string name="login_title">Login</string>
+    <string name="register_title">Create account</string>
+    <string name="email_hint">Email</string>
+    <string name="password_hint">Password</string>
+    <string name="login_button">Login</string>
+    <string name="register_button">Register</string>
+    <string name="no_account_sign_up">New user? Create an account</string>
+    <string name="already_have_account_login">Already have an account? Login</string>
+    <string name="email_required">Email is required</string>
+    <string name="password_required">Password is required</string>
+    <string name="password_too_short">Password must be at least 6 characters</string>
+    <string name="login_failed">Login failed</string>
+    <string name="registration_failed">Registration failed</string>
+    <string name="registration_success">Registration successful. Please login.</string>
+    <string name="sign_out">Sign Out</string>
 </resources>
