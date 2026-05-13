@@ -29,6 +29,10 @@ class RegistrationActivity : AppCompatActivity() {
                 binding.etEmail.error = getString(R.string.email_required)
                 return@setOnClickListener
             }
+            if (password.isBlank()) {
+                binding.etPassword.error = getString(R.string.password_required)
+                return@setOnClickListener
+            }
             if (password.length < 6) {
                 binding.etPassword.error = getString(R.string.password_too_short)
                 return@setOnClickListener

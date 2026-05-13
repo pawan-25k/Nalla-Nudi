@@ -6,6 +6,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.nudi.nallanudi.MainActivity
+import com.nudi.nallanudi.R
 import com.nudi.nallanudi.databinding.ActivityLoginBinding
 
 class LoginActivity : AppCompatActivity() {
@@ -25,11 +26,11 @@ class LoginActivity : AppCompatActivity() {
             val password = binding.etPassword.text.toString()
 
             if (email.isBlank()) {
-                binding.etEmail.error = getString(com.nudi.nallanudi.R.string.email_required)
+                binding.etEmail.error = getString(R.string.email_required)
                 return@setOnClickListener
             }
             if (password.isBlank()) {
-                binding.etPassword.error = getString(com.nudi.nallanudi.R.string.password_required)
+                binding.etPassword.error = getString(R.string.password_required)
                 return@setOnClickListener
             }
 
@@ -41,7 +42,7 @@ class LoginActivity : AppCompatActivity() {
                         Toast.makeText(
                             this,
                             task.exception?.localizedMessage
-                                ?: getString(com.nudi.nallanudi.R.string.login_failed),
+                                ?: getString(R.string.login_failed),
                             Toast.LENGTH_SHORT
                         ).show()
                     }

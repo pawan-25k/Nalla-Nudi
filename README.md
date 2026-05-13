@@ -19,7 +19,7 @@ Kotlin, Room Database, ViewModel, LiveData, RecyclerView, Android TTS, ViewBindi
 2. Enable **Authentication > Sign-in method > Email/Password** in Firebase Console.
 3. Download `google-services.json` from Firebase Console.
 4. Place the file at:
-   - `/home/runner/work/Nalla-Nudi/Nalla-Nudi/app/google-services.json`
+   - `app/google-services.json`
 5. Build and run the app. Login and Registration screens will use Firebase Authentication.
 
 > `google-services.json` is intentionally not included in this repository.
