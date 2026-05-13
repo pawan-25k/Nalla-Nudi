@@ -13,6 +13,6 @@
     <string name="password_too_short">Password must be at least 6 characters</string>
     <string name="login_failed">Login failed</string>
     <string name="registration_failed">Registration failed</string>
-    <string name="registration_success">Registration successful. Please login.</string>
+    <string name="registration_success">Registration successful.</string>
     <string name="sign_out">Sign Out</string>
 </resources>
