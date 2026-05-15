@@ -1,0 +1,44 @@
+<resources>
+    <string name="app_name">ನಲ್ಲ ನುಡಿ</string>
+    <string name="login">ಲಾಗಿನ್</string>
+    <string name="username">ಬಳಕೆದಾರರ ಹೆಸರು</string>
+    <string name="password">ಪಾಸ್‌ವರ್ಡ್</string>
+    <string name="welcome_back">ಮತ್ತೆ ಸ್ವಾಗತ</string>
+    <string name="continue_as_guest">ಅತಿಥಿಯಾಗಿ ಮುಂದುವರಿಯಿರಿ</string>
+    <string name="app_name_kannada">ನಲ್ಲ ನುಡಿ</string>
+
+    <string name="namaskara">ನಮಸ್ಕಾರ!</string>
+    <string name="word_of_the_day">ದಿನದ ಪದ</string>
+    <string name="saved">ಉಳಿಸಲಾಗಿದೆ</string>
+    <string name="my_list">ನನ್ನ ಪಟ್ಟಿ</string>
+    <string name="smart">ಸ್ಮಾರ್ಟ್</string>
+    <string name="ai_help">AI ಸಹಾಯ</string>
+    <string name="dictionary_search">ಶಬ್ದಕೋಶ ಹುಡುಕಾಟ</string>
+    <string name="technical_quiz">ತಾಂತ್ರಿಕ ರಸಪ್ರಶ್ನೆ</string>
+
+    <string name="search_terms">ಹುಡುಕಾಟ ಪದಗಳು</string>
+    <string name="subject_all">ಎಲ್ಲಾ</string>
+    <string name="subject_science">ವಿಜ್ಞಾನ</string>
+    <string name="subject_math">ಗಣಿತ</string>
+    <string name="subject_commerce">ವಾಣಿಜ್ಯ</string>
+    <string name="word_detail">ಪದ ವಿವರ</string>
+    <string name="explanation">ವಿವರಣೆ</string>
+    <string name="example">ಉದಾಹರಣೆ</string>
+    <string name="my_saved_list">ನನ್ನ ಉಳಿಸಿದ ಪಟ್ಟಿ</string>
+    <string name="flashcards">ಫ್ಲ್ಯಾಷ್‌ಕಾರ್ಡ್‌ಗಳು</string>
+    <string name="tap_to_flip">ತಿರುಗಿಸಲು ಟ್ಯಾಪ್ ಮಾಡಿ</string>
+    <string name="meaning">ಅರ್ಥ</string>
+
+    <string name="login_successful">ಲಾಗಿನ್ ಯಶಸ್ವಿಯಾಗಿದೆ!</string>
+    <string name="please_enter_details">ದಯವಿಟ್ಟು ಎಲ್ಲಾ ವಿವರಗಳನ್ನು ನಮೂದಿಸಿ</string>
+    <string name="search_hint">ಇಂಗ್ಲಿಷ್‌ನಲ್ಲಿ ಹುಡುಕಿ...</string>
+    <string name="terms_count">%d ಪದಗಳು</string>
+    <string name="added_to_list">ನನ್ನ ಪಟ್ಟಿಗೆ ಸೇರಿಸಲಾಗಿದೆ ★</string>
+    <string name="removed_from_list">ನನ್ನ ಪಟ್ಟಿಯಿಂದ ತೆಗೆದುಹಾಕಲಾಗಿದೆ</string>
+    <string name="copied_to_clipboard">ಕ್ಲಿಪ್‌ಬೋರ್ಡ್‌ಗೆ ನಕಲಿಸಲಾಗಿದೆ</string>
+    <string name="tts_not_available">TTS ಲಭ್ಯವಿಲ್ಲ</string>
+    <string name="score">ಅಂಕ: %d</string>
+    <string name="correct_msg">ಸರಿ! +10</string>
+    <string name="wrong_msg">ತಪ್ಪು! ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ</string>
+    <string name="not_enough_words">ರಸಪ್ರಶ್ನೆಗಾಗಿ ಸಾಕಷ್ಟು ಪದಗಳಿಲ್ಲ</string>
+</resources>

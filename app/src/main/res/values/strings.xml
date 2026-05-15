@@ -1,0 +1,44 @@
+<resources>
+    <string name="app_name">NallaNudi</string>
+    <string name="login">Login</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="welcome_back">Welcome Back</string>
+    <string name="continue_as_guest">Continue as Guest</string>
+    <string name="app_name_kannada">ನಲ್ಲ ನುಡಿ</string>
+
+    <string name="namaskara">Namaskara!</string>
+    <string name="word_of_the_day">Word of the day</string>
+    <string name="saved">SAVED</string>
+    <string name="my_list">My List</string>
+    <string name="smart">SMART</string>
+    <string name="ai_help">AI Help</string>
+    <string name="dictionary_search">Dictionary Search</string>
+    <string name="technical_quiz">Technical Quiz</string>
+
+    <string name="search_terms">Search Terms</string>
+    <string name="subject_all">All</string>
+    <string name="subject_science">Science</string>
+    <string name="subject_math">Math</string>
+    <string name="subject_commerce">Commerce</string>
+    <string name="word_detail">Word Detail</string>
+    <string name="explanation">Explanation</string>
+    <string name="example">Example</string>
+    <string name="my_saved_list">My Saved List</string>
+    <string name="flashcards">Flashcards</string>
+    <string name="tap_to_flip">Tap to flip</string>
+    <string name="meaning">Meaning</string>
+
+    <string name="login_successful">Login Successful!</string>
+    <string name="please_enter_details">Please enter all details</string>
+    <string name="search_hint">Search in English...</string>
+    <string name="terms_count">%d terms</string>
+    <string name="added_to_list">Added to My List ★</string>
+    <string name="removed_from_list">Removed from My List</string>
+    <string name="copied_to_clipboard">Copied to clipboard</string>
+    <string name="tts_not_available">TTS not available</string>
+    <string name="score">Score: %d</string>
+    <string name="correct_msg">Correct! +10</string>
+    <string name="wrong_msg">Wrong! Try again</string>
+    <string name="not_enough_words">Not enough words for a quiz</string>
+</resources>

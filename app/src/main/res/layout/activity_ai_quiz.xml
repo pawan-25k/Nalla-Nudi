@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#FFF8F0">
+
+    <!-- Top Bar -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        android:gravity="center_vertical"
+        android:background="#2563eb">
+
+        <ImageButton
+            android:id="@+id/btnBack"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@android:drawable/ic_media_previous"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:tint="#ffffff"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="🤖 AI Quiz (Gemini)"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="#ffffff"
+            android:layout_marginStart="12dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="24dp"
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:id="@+id/tvAiScore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Score: 0"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="#2563eb"
+            android:layout_marginBottom="16dp"/>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="4dp"
+            android:layout_marginBottom="24dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="24dp">
+
+                <TextView
+                    android:id="@+id/tvAiQuestion"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Generating AI question..."
+                    android:textSize="18sp"
+                    android:textColor="#1a1408"
+                    android:gravity="center"
+                    android:minLines="3"/>
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <Button
+            android:id="@+id/btnAiOption1"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="Option 1"
+            android:textAllCaps="false"
+            android:backgroundTint="#ffffff"
+            android:textColor="#1a1408"
+            android:layout_marginBottom="12dp"
+            app:strokeWidth="1dp"
+            app:strokeColor="#e5e7eb"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
+
+        <Button
+            android:id="@+id/btnAiOption2"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="Option 2"
+            android:textAllCaps="false"
+            android:backgroundTint="#ffffff"
+            android:textColor="#1a1408"
+            android:layout_marginBottom="12dp"
+            app:strokeWidth="1dp"
+            app:strokeColor="#e5e7eb"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
+
+        <Button
+            android:id="@+id/btnAiOption3"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="Option 3"
+            android:textAllCaps="false"
+            android:backgroundTint="#ffffff"
+            android:textColor="#1a1408"
+            android:layout_marginBottom="12dp"
+            app:strokeWidth="1dp"
+            app:strokeColor="#e5e7eb"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
+
+        <Button
+            android:id="@+id/btnAiOption4"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:text="Option 4"
+            android:textAllCaps="false"
+            android:backgroundTint="#ffffff"
+            android:textColor="#1a1408"
+            app:strokeWidth="1dp"
+            app:strokeColor="#e5e7eb"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:visibility="gone"/>
+
+    </LinearLayout>
+</LinearLayout>
