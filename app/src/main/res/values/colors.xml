@@ -3,22 +3,25 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
-    <!-- Modern Palette -->
+    <!-- Refined Brand Palette -->
     <color name="brand_blue">#2563EB</color>
-    <color name="brand_purple">#8B5CF6</color>
+    <color name="brand_blue_light">#DBEAFE</color>
+    <color name="brand_purple">#7C3AED</color>
+    <color name="brand_purple_light">#EDE9FE</color>
     <color name="brand_orange">#F59E0B</color>
+    <color name="brand_orange_light">#FEF3C7</color>
     <color name="brand_slate">#1E293B</color>
-    <color name="brand_bg">#FDFCFB</color>
+    <color name="brand_slate_light">#F1F5F9</color>
 
-    <color name="text_main">#1E293B</color>
+    <color name="brand_bg">#F8FAFC</color>
+    <color name="brand_card_bg">#FFFFFF</color>
+    <color name="brand_divider">#E2E8F0</color>
+
+    <color name="text_main">#0F172A</color>
     <color name="text_muted">#64748B</color>
+    <color name="text_on_dark">#FFFFFF</color>
 
-    <color name="primary_orange">#d97706</color>
-    <color name="primary_orange_light">#fff3e0</color>
-    <color name="bg_cream">#FFF8F0</color>
-    <color name="text_dark">#1a1408</color>
-    <color name="text_gray">#7a6f5e</color>
-    <color name="teal_accent">#0d9488</color>
-    <color name="purple_accent">#7c3aed</color>
-    <color name="pink_accent">#db2777</color>
+    <!-- Legacy compatibility -->
+    <color name="primary_orange">#F59E0B</color>
+    <color name="primary_orange_light">#FEF3C7</color>
 </resources>

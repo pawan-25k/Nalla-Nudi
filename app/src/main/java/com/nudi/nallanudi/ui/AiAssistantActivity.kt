@@ -64,7 +64,12 @@ class AiAssistantActivity : AppCompatActivity() {
                     binding.chatScrollView.fullScroll(View.FOCUS_DOWN)
                 }
             } catch (e: Exception) {
-                Toast.makeText(this@AiAssistantActivity, "Error: ${e.message}", Toast.LENGTH_LONG).show()
+                val errorMsg = if (e is retrofit2.HttpException) {
+                    "API Error (${e.code()}): ${e.message()}"
+                } else {
+                    "Error: ${e.message}"
+                }
+                Toast.makeText(this@AiAssistantActivity, errorMsg, Toast.LENGTH_LONG).show()
             } finally {
                 binding.progressBar.visibility = View.GONE
                 binding.btnSend.isEnabled = true

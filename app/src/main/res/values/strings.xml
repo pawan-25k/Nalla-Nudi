@@ -11,8 +11,8 @@
     <string name="word_of_the_day">Word of the day</string>
     <string name="saved">SAVED</string>
     <string name="my_list">My List</string>
-    <string name="smart">SMART</string>
-    <string name="ai_help">AI Help</string>
+    <string name="smart">REVISE</string>
+    <string name="ai_help">Flashcards</string>
     <string name="dictionary_search">Dictionary Search</string>
     <string name="technical_quiz">Technical Quiz</string>
 

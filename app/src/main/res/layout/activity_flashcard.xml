@@ -93,13 +93,23 @@
                     android:textColor="@color/text_main"
                     android:gravity="center"/>
 
+                <ImageButton
+                    android:id="@+id/btnSpeakEnglish"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="12dp"
+                    android:src="@android:drawable/ic_lock_silent_mode_off"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    app:tint="@color/brand_blue"
+                    android:contentDescription="Speak English"/>
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/tap_to_flip"
                     android:textSize="13sp"
                     android:textColor="@color/text_muted"
-                    android:layout_marginTop="24dp"/>
+                    android:layout_marginTop="16dp"/>
 
             </LinearLayout>
 
@@ -131,6 +141,16 @@
                     android:textStyle="bold"
                     android:textColor="@color/brand_blue"
                     android:gravity="center"/>
+
+                <ImageButton
+                    android:id="@+id/btnSpeakKannada"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_marginTop="8dp"
+                    android:src="@android:drawable/ic_lock_silent_mode_off"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    app:tint="@color/brand_blue"
+                    android:contentDescription="Speak Kannada"/>
 
                 <TextView
                     android:id="@+id/tvCardExplanation"

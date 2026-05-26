@@ -18,15 +18,22 @@ import java.util.Locale
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.os.LocaleListCompat
 
-class MainActivity : AppCompatActivity() {
+import android.speech.tts.TextToSpeech
+import android.widget.Toast
+
+class MainActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
 
     private lateinit var binding: ActivityMainBinding
     private val viewModel: WordViewModel by viewModels()
+    private lateinit var tts: TextToSpeech
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        // Initialize TTS
+        tts = TextToSpeech(this, this)
 
         // Set Language Switch Initial State
         val currentLocales = AppCompatDelegate.getApplicationLocales()
@@ -51,6 +58,10 @@ class MainActivity : AppCompatActivity() {
                 binding.tvEnglishWord.text = it.englishTerm
                 binding.tvKannadaWord.text = it.kannadaTerm
                 binding.tvExample.text = it.example
+
+                binding.btnSpeakWOD.setOnClickListener { _ ->
+                    speakWord(it.englishTerm)
+                }
             }
         }
 
@@ -69,9 +80,11 @@ class MainActivity : AppCompatActivity() {
             startActivity(Intent(this, QuizActivity::class.java))
         }
 
-        // AI Assistant button
-        binding.btnGoToAiAssistant.setOnClickListener {
-            startActivity(Intent(this, com.nudi.nallanudi.ui.AiAssistantActivity::class.java))
+        // Flashcards button
+        binding.btnGoToFlashcards.setOnClickListener {
+            val intent = Intent(this, com.nudi.nallanudi.ui.FlashcardActivity::class.java)
+            intent.putExtra("loadAll", true)
+            startActivity(intent)
         }
 
         // Bottom Navigation Logic
@@ -93,5 +106,26 @@ class MainActivity : AppCompatActivity() {
                 else -> false
             }
         }
+    }
+
+    private fun speakWord(word: String) {
+        if (::tts.isInitialized) {
+            tts.language = Locale.US
+            tts.speak(word, TextToSpeech.QUEUE_FLUSH, null, null)
+        }
+    }
+
+    override fun onInit(status: Int) {
+        if (status != TextToSpeech.SUCCESS) {
+            Toast.makeText(this, "TTS not available", Toast.LENGTH_SHORT).show()
+        }
+    }
+
+    override fun onDestroy() {
+        if (::tts.isInitialized) {
+            tts.stop()
+            tts.shutdown()
+        }
+        super.onDestroy()
     }
 }

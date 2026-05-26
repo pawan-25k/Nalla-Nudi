@@ -59,9 +59,14 @@ class DetailActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
         // Back button
         binding.btnBack.setOnClickListener { finish() }
 
-        // Speak button
+        // Speak button (English)
         binding.btnSpeak.setOnClickListener {
-            speakWord(englishTerm)
+            speakWord(englishTerm, isKannada = false)
+        }
+
+        // Speak button (Kannada)
+        binding.btnSpeakKannada.setOnClickListener {
+            speakWord(kannadaTerm, isKannada = true)
         }
 
         // Bookmark button
@@ -124,9 +129,16 @@ class DetailActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
         )
     }
 
-    private fun speakWord(word: String) {
+    private fun speakWord(word: String, isKannada: Boolean) {
         if (::tts.isInitialized) {
-            tts.speak(word, TextToSpeech.QUEUE_FLUSH, null, null)
+            val locale = if (isKannada) Locale("kn", "IN") else Locale.US
+            val result = tts.setLanguage(locale)
+            if (result == TextToSpeech.LANG_MISSING_DATA || result == TextToSpeech.LANG_NOT_SUPPORTED) {
+                val lang = if (isKannada) "Kannada" else "English"
+                Toast.makeText(this, "$lang voice data not found. Please enable it in device settings.", Toast.LENGTH_LONG).show()
+            } else {
+                tts.speak(word, TextToSpeech.QUEUE_FLUSH, null, null)
+            }
         }
     }
 

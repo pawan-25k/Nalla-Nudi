@@ -25,13 +25,20 @@ class SplashActivity : AppCompatActivity() {
         val repository = WordRepository(dao)
 
         lifecycleScope.launch {
-            // Ensure DB is seeded
-            repository.seedDatabase(this@SplashActivity)
-            // Small delay for branding
-            delay(1500)
-            // Go to login
-            startActivity(Intent(this@SplashActivity, LoginActivity::class.java))
-            finish()
+            try {
+                // Ensure DB is seeded
+                repository.seedDatabase(this@SplashActivity)
+                // Small delay for branding
+                delay(1500)
+                // Go to login
+                startActivity(Intent(this@SplashActivity, LoginActivity::class.java))
+                finish()
+            } catch (e: Exception) {
+                android.util.Log.e("SplashActivity", "Error during DB init", e)
+                // Still try to proceed
+                startActivity(Intent(this@SplashActivity, LoginActivity::class.java))
+                finish()
+            }
         }
     }
 }

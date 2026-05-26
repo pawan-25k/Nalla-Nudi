@@ -1,41 +1,72 @@
 package com.nudi.nallanudi.ui
 
 import android.os.Bundle
+import android.speech.tts.TextToSpeech
 import android.view.View
 import android.view.animation.AnimationUtils
+import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.nudi.nallanudi.databinding.ActivityFlashcardBinding
 import com.nudi.nallanudi.data.Word
 import com.nudi.nallanudi.viewmodel.WordViewModel
+import java.util.Locale
 
-class FlashcardActivity : AppCompatActivity() {
+class FlashcardActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
 
     private lateinit var binding: ActivityFlashcardBinding
     private val viewModel: WordViewModel by viewModels()
     private var words: List<Word> = emptyList()
     private var currentIndex = 0
     private var isShowingFront = true
+    private lateinit var tts: TextToSpeech
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityFlashcardBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        // Initialize TTS
+        tts = TextToSpeech(this, this)
+
         binding.btnBack.setOnClickListener { finish() }
 
-        // Load bookmarked words
-        viewModel.loadBookmarks()
-        viewModel.bookmarkedWords.observe(this) { bookmarked ->
-            if (bookmarked.isNotEmpty()) {
-                words = bookmarked
-                showCard(currentIndex)
+        // Load words
+        val loadAll = intent.getBooleanExtra("loadAll", true)
+        if (loadAll) {
+            viewModel.searchWords("", "All")
+            viewModel.searchResults.observe(this) { allWords ->
+                if (allWords.isNotEmpty() && words.isEmpty()) {
+                    words = allWords.shuffled()
+                    showCard(currentIndex)
+                }
+            }
+        } else {
+            viewModel.loadBookmarks()
+            viewModel.bookmarkedWords.observe(this) { bookmarked ->
+                if (bookmarked.isNotEmpty() && words.isEmpty()) {
+                    words = bookmarked
+                    showCard(currentIndex)
+                }
             }
         }
 
         // Flip card on tap
         binding.flashCard.setOnClickListener {
             flipCard()
+        }
+
+        // Speak buttons
+        binding.btnSpeakEnglish.setOnClickListener {
+            if (words.isNotEmpty()) {
+                speakWord(words[currentIndex].englishTerm, false)
+            }
+        }
+
+        binding.btnSpeakKannada.setOnClickListener {
+            if (words.isNotEmpty()) {
+                speakWord(words[currentIndex].kannadaTerm, true)
+            }
         }
 
         // Previous card
@@ -55,6 +86,33 @@ class FlashcardActivity : AppCompatActivity() {
                 showCard(currentIndex)
             }
         }
+    }
+
+    private fun speakWord(word: String, isKannada: Boolean) {
+        if (::tts.isInitialized) {
+            val locale = if (isKannada) Locale.forLanguageTag("kn-IN") else Locale.US
+            val result = tts.setLanguage(locale)
+            if (result == TextToSpeech.LANG_MISSING_DATA || result == TextToSpeech.LANG_NOT_SUPPORTED) {
+                val lang = if (isKannada) "Kannada" else "English"
+                Toast.makeText(this, "$lang voice not found.", Toast.LENGTH_SHORT).show()
+            } else {
+                tts.speak(word, TextToSpeech.QUEUE_FLUSH, null, null)
+            }
+        }
+    }
+
+    override fun onInit(status: Int) {
+        if (status != TextToSpeech.SUCCESS) {
+            Toast.makeText(this, "TTS not available", Toast.LENGTH_SHORT).show()
+        }
+    }
+
+    override fun onDestroy() {
+        if (::tts.isInitialized) {
+            tts.stop()
+            tts.shutdown()
+        }
+        super.onDestroy()
     }
 
     private fun showCard(index: Int) {

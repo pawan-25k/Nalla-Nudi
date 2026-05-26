@@ -29,8 +29,7 @@ class MyListActivity : AppCompatActivity() {
         binding.btnFlashcard.setOnClickListener {
             if (bookmarkedWords.isEmpty()) return@setOnClickListener
             val intent = Intent(this, FlashcardActivity::class.java)
-            val ids = bookmarkedWords.map { it.id }.toIntArray()
-            intent.putExtra("wordIds", ids)
+            intent.putExtra("loadAll", false)
             startActivity(intent)
         }
 
